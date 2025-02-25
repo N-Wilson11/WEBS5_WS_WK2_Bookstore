@@ -3,15 +3,14 @@ var mongoose = require('mongoose');
 console.log('Initializing author schema');
 
 var authorSchema = new mongoose.Schema({
-    /*
-    TODO: 1 - Schema authors vullen
-    - Firstname: Verplicht, String
-    - Lastname: Verplicht, String
-    - Birthdate: Verplicht, Date, voor vandaag
-    - Country: String, default: NL
-    - Ranking: Number, boven 0
-    - Books: Array van book id's
-    */
+    
+    firstName: {type: String, require: true},
+    lastName: {type: String, require: true},
+    birthdate: {type: Date, require: true, default: Date.now},
+    country: {type: String, default: 'NL'},
+    ranking: {type: Number, min: 1},
+    books: [{type: mongoose.Schema.Types.ObjectId, ref: 'Book'}]
+    
 });
 
 /*

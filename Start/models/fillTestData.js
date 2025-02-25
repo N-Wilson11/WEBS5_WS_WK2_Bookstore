@@ -4,18 +4,65 @@ Author = mongoose.model('Author');
 
 let author_seed = [
 	// TODO: 3 - Testdata voor authors maken.
-
-	// Vul hier je testdata voor authors in 
-	// In je /models/book.js staat welke velden je nodig hebt.
-	// {}, {}, {}
+    {
+        firstName: 'J.R.R.',
+        lastName: 'Tolkien',
+        birthdate: new Date('1892-01-03'),
+        country: 'UK',
+        ranking: 1,
+        books: [] // We vullen dit later in
+    },
+    {
+        firstName: 'George',
+        lastName: 'Orwell',
+        birthdate: new Date('1903-06-25'),
+        country: 'IN',
+        ranking: 2,
+        books: [] // We vullen dit later in
+    },
+    {
+        firstName: 'Jane',
+        lastName: 'Austen',
+        birthdate: new Date('1775-12-16'),
+        country: 'UK',
+        ranking: 3,
+        books: [] // We vullen dit later in
+    }
 ];
 
 let book_seed = [
 	// TODO: 4 - Testdata voor boeken maken.
 
-	// Vul hier je testdata voor boeken in
-	// In je /models/book.js staat welke velden je nodig hebt.
-	// {}, {}, {}
+	{
+        title: 'The Hobbit',
+        publishDate: new Date('1937-09-21'),
+        category: 'Fantasy',
+        chapters: [
+            { title: 'An Unexpected Party', numberOfPages: 20 },
+            { title: 'Roast Mutton', numberOfPages: 18 },
+            { title: 'A Short Rest', numberOfPages: 22 }
+        ]
+    },
+    {
+        title: '1984',
+        publishDate: new Date('1949-06-08'),
+        category: 'Dystopian',
+        chapters: [
+            { title: 'Chapter 1', numberOfPages: 15 },
+            { title: 'Chapter 2', numberOfPages: 18 },
+            { title: 'Chapter 3', numberOfPages: 20 }
+        ]
+    },
+    {
+        title: 'Pride and Prejudice',
+        publishDate: new Date('1813-01-28'),
+        category: 'Romance',
+        chapters: [
+            { title: 'Chapter 1', numberOfPages: 12 },
+            { title: 'Chapter 2', numberOfPages: 15 },
+            { title: 'Chapter 3', numberOfPages: 18 }
+        ]
+    }
 ];
 
 module.exports = function(){
