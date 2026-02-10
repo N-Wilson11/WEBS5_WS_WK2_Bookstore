@@ -12,6 +12,17 @@ var authorSchema = new mongoose.Schema({
     - Ranking: Number, boven 0
     - Books: Array van book id's
     */
+   firstname: { type: String, required: true },
+   lastname: { type: String, required: true },
+   birthdate: { type: Date, required: true, validate: {
+       validator: function(value) {
+           return value < new Date();
+       },
+       message: 'Birthdate must be in the past'
+   }},
+   country: { type: String, default: 'NL' },
+   ranking: { type: Number, min: 1 },
+   books: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Book' }]
 });
 
 /*
