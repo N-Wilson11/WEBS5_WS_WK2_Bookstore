@@ -19,6 +19,9 @@ let book_seed = [
 	// Vul hier je testdata voor boeken in
 	// In je /models/book.js staat welke velden je nodig hebt.
 	// {}, {}, {}
+    {"title": "Book One", "publishDate": new Date('2020-01-01'), "category": "Fiction", "chapters": [{"title": "Chapter 1", "numberOfPages": 10}, {"title": "Chapter 2", "numberOfPages": 15}]},
+    {"title": "Book Two", "publishDate": new Date('2019-05-15'), "category": "Non-Fiction", "chapters": [{"title": "Chapter 1", "numberOfPages": 20}, {"title": "Chapter 2", "numberOfPages": 25}]},
+    {"title": "Book Three", "publishDate": new Date('2018-09-30'), "category": "Science Fiction", "chapters": [{"title": "Chapter 1", "numberOfPages": 30}, {"title": "Chapter 2", "numberOfPages": 35}]}
 ];
 
 module.exports = function(){
