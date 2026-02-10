@@ -10,6 +10,18 @@ var bookSchema = new mongoose.Schema({
     - Category: Verplicht, String
     - Chapters: Array van JSNON { title, numberOfPages }
     */
+   title: {type: String, required: true },
+   publishDate: { type: Date, required: true, validate: {
+        validator: function(value) {
+            return value < new Date();
+        },
+        message: 'Publish date must be in the past'
+    }},
+    category: { type: String, required: true },
+    chapters: [{
+        title: { type: String, required: true },
+        numberOfPages: { type: Number, required: true, min: 1 }
+    }]
 });
 
 /*
