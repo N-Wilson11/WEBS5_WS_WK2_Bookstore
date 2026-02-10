@@ -8,6 +8,9 @@ let author_seed = [
 	// Vul hier je testdata voor authors in 
 	// In je /models/book.js staat welke velden je nodig hebt.
 	// {}, {}, {}
+    {"firstname": "John", "lastname": "Doe", "birthdate": new Date('1990-01-01'), "country": "US", "ranking": 5, "books": []},
+    {"firstname": "Jane", "lastname": "Smith", "birthdate": new Date('1985-05-15'), "country": "UK", "ranking": 4, "books": []},
+    {"firstname": "Alice", "lastname": "Johnson", "birthdate": new Date('1978-09-30'), "country": "CA", "ranking": 3, "books": []}
 ];
 
 let book_seed = [
