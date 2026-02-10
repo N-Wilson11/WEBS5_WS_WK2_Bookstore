@@ -30,6 +30,10 @@ TODO: 5 - Virtual property totalNumberOfPages, opgebouwd uit numberOfPages van c
 - De benodigde query methods
 - De benodigde instance methods
 */
+ var totalNumberOfPages = bookSchema.virtual('totalNumberOfPages');
+ totalNumberOfPages.get(function() {
+     return this.chapters.reduce((total, chapter) => total + chapter.numberOfPages, 0);
+ });
 
 mongoose.model('Book', bookSchema);
 
