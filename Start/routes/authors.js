@@ -13,6 +13,9 @@ Book = mongoose.model('Book');
 	TODO: 9 - Filtering: QueryString variabele: country
 	TODO: 10 - Filtering: QueryString variabele: fullName
 */
+populateBooks = function(query){
+	return query.populate('books');
+}
 function getAuthors(req, res){
 	var query = {};
 	if(req.params.id){
@@ -20,6 +23,7 @@ function getAuthors(req, res){
 	} 
 
 	var result = Author.find(query);
+	result = populateBooks(result);
 
 	result
 		.then(data => {
